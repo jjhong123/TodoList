@@ -1,0 +1,128 @@
+// @import "normalize.css"; // Note this
+@import "reset.scss";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #f0efe9;
+    color: #5b5c68;
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.box {
+    width: 375px;
+    background: white;
+    font-size: 2rem;
+    padding: 10px 50px;
+    margin: 15px auto;
+    position: relative;
+    > div {
+        margin-bottom: 10px;
+    }
+
+    .title {
+        display: flex;
+        margin-bottom: 40px;
+        .date {
+            width: 49%;
+            display: flex;
+            .month {
+                font-size: 5rem;
+                font-weight: bold;
+            }
+            .day {
+                display: inline-block;
+                .month--en {
+                    height: 50%;
+                }
+            }
+        }
+        .week {
+            margin-left: auto;
+            height: 50px;
+            line-height: 50px;
+        }
+    }
+
+    .menu {
+        .list {
+            .item {
+                display: flex;
+                width: 100%;
+                margin-bottom: 40px;
+                
+                .text {
+                    &-complete {
+                        opacity: 0.6;
+                        position: relative;
+                        transition:all .8s;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 1px;
+                            width: 100%;
+                            top: 50%;
+                            left: 0%;
+                            background-color: #5b5c68;
+                        }
+                    }
+                }
+                .btn-list{
+                    margin-left: auto;
+                }
+
+                input {
+                    display: none;
+                }
+
+            }
+        }
+    }
+
+    .addlist {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%, 50%);
+        overflow: hidden;
+
+        button {
+            border-radius: 50%;
+            padding: 3rem;
+            font-size: 3rem;
+            line-height: 3rem;
+            background: #51e3a4;
+            border: transparent;
+            color: #45bf8c;
+            cursor: pointer;
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+
+    //手機
+    @media all and (max-width: 480px) {
+        width: 100%;
+        padding: 15px;
+    }
+}
